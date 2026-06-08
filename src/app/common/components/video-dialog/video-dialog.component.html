@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="header">
+    <button class="video-close" mat-dialog-close mat-icon-button>
+      <mat-icon fontIcon="close"></mat-icon>
+    </button>
+  </div>
+  <div class="video">
+    <iframe
+      *ngIf="ser.CurrentVideoSrc$ | async as sr"
+      #frame
+      [src]="sr.src | safevideo"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <ng-container *ngIf="ser.VideoThumbnails$ | async as thumbnails">
+    <div class="footer" *ngIf="thumbnails.length > 1">
+      <ul>
+        <li *ngFor="let video of thumbnails; let i = index">
+          <a (click)="ser.PlayVideoByIndex(i)" href="javascript:void(0)">
+            <img [src]="video.src" [alt]="video.alt" />
+            <span>{{ video.title }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</div>

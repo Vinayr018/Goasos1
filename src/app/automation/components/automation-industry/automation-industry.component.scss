@@ -1,0 +1,54 @@
+@mixin strong-points {
+    &::after {
+        content: ":";
+    }
+    margin-left: 0.3em;
+    margin-right: 0.4em;
+}
+
+@mixin list-spacing {
+    margin: 0.3em 0;
+}
+
+section.content {
+    padding: 1em;
+}
+
+section.types {
+    padding: 1em;
+    > div.type {
+        padding: 0.5em;
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        @media (max-width: 752px) {
+            grid-template-columns: 30px 1fr;
+        }
+        gap: 10px;
+        > div.icon {
+            padding-top: 3px;
+            > img {
+                display: block;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+        > div.content {
+            > div.sub-content {
+                margin: 0.5em 0;
+            }
+        }
+    }
+}
+
+section.working {
+    padding: 0 1em;
+    > ul {
+        list-style-type: none;
+        > li {
+            @include list-spacing();
+            > strong {
+                @include strong-points();
+            }
+        }
+    }
+}

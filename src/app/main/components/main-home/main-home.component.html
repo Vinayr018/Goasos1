@@ -1,0 +1,194 @@
+<div class="main-home-wrapper">
+    <app-hero h1="Automation Solutions for Homes, Offices and Industries | Bangalore, Bhubaneswar & Cuttack"
+        p="Empowering businesses with smart home, office, industrial and energy automation along with expert software consulting in Banking, Capital Markets, and Data & AI - serving Bangalore, Bhubaneswar, and Cuttack."
+        [showCLient]="true">
+        <div class="actions" actions>
+            <a [href]="cont.PopulateContactLocation()" (click)="analytics.HomeCtaEvent('home_request_demo')"
+                class="pri">Request a Demo</a>
+            <a [href]="cont.PopulateContactLocation()" (click)="analytics.HomeCtaEvent('home_hero_contact')"
+                class="sec">Contact
+                Us&nbsp;&nbsp;&rarr;</a>
+        </div>
+    </app-hero>
+    <section class="about block">
+        <h2>About Us</h2>
+        <section class="grid">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>who we are:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>At GOAS, we combine smart automation products with consulting expertise to help businesses and
+                        homeowners embrace the digital future. Our mission is to empower organizations across industries
+                        by
+                        delivering comprehensive, tailored solutions that drive operational efficiency, reduce costs and
+                        foster
+                        innovation.</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>our key strengths:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <ul class="card-lst">
+                        <li><strong>Comprehensive Offerings:</strong>Home, Office, Industrial & Energy Automation
+                            Solutions.
+                        </li>
+                        <li><strong>Expert Consulting:</strong>Software consulting in Banking & Financial Services,
+                            Capital
+                            Markets, and Data & AI.</li>
+                        <li>Local expertise in Bangalore, Bhubaneswar, and Cuttack.</li>
+                    </ul>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>The Automation Advantage:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <ul class="card-lst">
+                        <li>Increased Operational Efficiency</li>
+                        <li>Significant Cost Reduction</li>
+                        <li>Enhanced Security</li>
+                    </ul>
+                </mat-card-content>
+            </mat-card>
+        </section>
+        <a routerLink="about-us" (click)="analytics.HomeCtaEvent('home_about')">Learn More About
+            Us&nbsp;&nbsp;&rarr;</a>
+    </section>
+    <section class="block home-automation">
+        <h2>Our Automation Solutions</h2>
+        <div class="auto-sol">
+            <mat-card class="space-it">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>Home Automation Solutions:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Transform your living space with intelligent systems that enhance comfort, security, and energy
+                        efficiency.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a routerLink="smart-home-automation-solutions" class="card-cta"
+                        (click)="analytics.HomeCtaEvent('home_smart_home')">Make your Home
+                        Smarter&nbsp;&nbsp;&rarr;</a>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="space-it">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>Office Automation Solutions:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Streamline workplace operations with smart systems that boost productivity and strengthen
+                        security.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a routerLink="smart-office-automation-solutions" class="card-cta"
+                        (click)="analytics.HomeCtaEvent('home_automation_office')">Optimize Your
+                        Office&nbsp;&nbsp;&rarr;</a>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="space-it">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>Industrial Automation Systems:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Optimize your industrial operations with robust, cloud-based solutions.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a routerLink="industrial-automation-solutions" class="card-cta"
+                        (click)="analytics.HomeCtaEvent('home_automation_industry')">Boost
+                        Production&nbsp;&nbsp;&rarr;</a>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="space-it">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>Security Cameras & Centralized Surveillance:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Protect your assets and ensure security with advanced video surveillance systems designed for
+                        residential, commercial and industrial environments.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a routerLink="cctv-video-surveillance-security-cameras" class="card-cta"
+                        (click)="analytics.HomeCtaEvent('home_automation_security')">Upgrade Your
+                        Security&nbsp;&nbsp;&rarr;</a>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="space-it">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>Space-Saving Multi-Functional Furniture:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Maximize functionality in limited spaces with our innovative space-saving furniture and smart
+                        storage solutions for homes and offices.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a routerLink="space-saving-furniture-solutions" class="card-cta"
+                        (click)="analytics.HomeCtaEvent('home_automation_space')">Optimize Your Space
+                        Today&nbsp;&nbsp;&rarr;</a>
+                </mat-card-actions>
+            </mat-card>
+            <mat-card class="space-it">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>Solar Energy Solutions:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Optimize energy consumption with renewable solutions for homes and businesses.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a routerLink="solar-energy-solutions" class="card-cta"
+                        (click)="analytics.HomeCtaEvent('home_go_green')">Go Green&nbsp;&nbsp;&rarr;</a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </section>
+    <section class="block consulting">
+        <h2>Our Expert Consulting Services</h2>
+        <section class="consult-grid">
+            <section class="consul-type">
+                <h3>Banking & Financial Services:</h3>
+                <p>We help financial institutions leverage automation to streamline operations, enhance security and
+                    improve
+                    customer experiences.</p>
+            </section>
+            <section class="consul-type">
+                <h3>Capital Markets Solutions:</h3>
+                <p>Leverage our expertise in trade automation, risk management and data analytics to optimize operations
+                    in
+                    capital markets.</p>
+            </section>
+            <section class="consul-type">
+                <h3>Data & AI Services:</h3>
+                <p>Transform raw data into actionable insights. Our consulting services include data strategy
+                    development,
+                    machine learning, predictive analytics and business intelligence solutions.</p>
+            </section>
+        </section>
+        <a routerLink="software-consulting-services" (click)="analytics.HomeCtaEvent('home_consulting')">Learn More
+            About Our
+            Consulting
+            Services&nbsp;&nbsp;&rarr;</a>
+    </section>
+    <app-main-contact-branch />
+    <app-contact h2="Your Trusted Partner for Automation Solutions" h3="Ready to Automate?" />
+</div>

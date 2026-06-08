@@ -1,0 +1,26 @@
+$primary-color: #00a7f8;
+$bg-color: white;
+$hero-bg: #a1cfe48a;
+
+@mixin sec-cta {
+    color: $primary-color;
+    border: 1px solid;
+}
+
+section {
+    padding: 1em;
+    > h2 {
+        margin-bottom: 10px;
+    }
+    > div {
+        background-color: #ffffff;
+        padding: 1em;
+        > ul {
+            padding-left: 1em;
+        }
+        > a {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+}

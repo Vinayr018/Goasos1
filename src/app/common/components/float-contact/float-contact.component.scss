@@ -1,0 +1,44 @@
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+div.wrapper {
+    background-color: white;
+    color: black;
+    box-shadow:
+        0 -2px 4px $shadow-color,
+        -2px 0px 4px $shadow-color,
+        2px 0px 4px $shadow-color;
+    > ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        > li {
+            padding: 10px 15px;
+            border-right: 1px solid $shadow-color;
+            &:last-of-type {
+                border-right: none;
+            }
+            > a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                user-select: none;
+                cursor: pointer;
+                > mat-icon {
+                    color: black;
+                }
+                > span {
+                }
+                > svg {
+                    height: 1em;
+                    > path {
+                    }
+                }
+                > img {
+                    height: 1em;
+                    display: block;
+                }
+            }
+        }
+    }
+}

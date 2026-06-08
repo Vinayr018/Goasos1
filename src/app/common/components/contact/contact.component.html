@@ -1,0 +1,83 @@
+<section class="contact" id="contact-section">
+    <h2>{{h2}}</h2>
+    <h3 *ngIf="!!h3">{{h3}}</h3>
+    <p>Contact us to request a demo or schedule a consultation.</p>
+    <form [formGroup]="helper.contactGroup" (ngSubmit)="FormSubmit()">
+        <div class="row">
+            <label for="name">Full Name</label>
+            <div class="control">
+                <input type="text" formControlName="name" id="name">
+                <div class="errors" [ngClass]="helper.HasError(helper.NameControl) ? 'err':''">
+                    <ul>
+                        <li><span>{{helper.ErrorMessage(helper.NameControl)}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="email">Email Address</label>
+            <div class="control">
+                <input type="email" formControlName="email" id="email">
+                <div class="errors" [ngClass]="helper.HasError(helper.EmailControl) ? 'err':''">
+                    <ul>
+                        <li><span>{{helper.ErrorMessage(helper.EmailControl)}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="phone">Phone Number</label>
+            <div class="control">
+                <app-phone formControlName="phone" (codechange)="helper.UpdatePhoneFormatValidation($event)" />
+                <div class="errors" [ngClass]="helper.HasError(helper.PhoneControl) ? 'err':''">
+                    <ul>
+                        <li><span>{{helper.ErrorMessage(helper.PhoneControl)}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="interest">Interested In</label>
+            <div class="control">
+                <app-select id="interest" [items]="helper.Services" formControlName="interest" />
+                <div class="errors" [ngClass]="helper.HasError(helper.InterestControl) ? 'err':''">
+                    <ul>
+                        <li><span>{{helper.ErrorMessage(helper.InterestControl)}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="location">Location</label>
+            <div class="control">
+                <app-select id="location" [items]="helper.Locations" formControlName="location" />
+                <div class="errors" [ngClass]="helper.HasError(helper.LocationControl) ? 'err':''">
+                    <ul>
+                        <li><span>{{helper.ErrorMessage(helper.LocationControl)}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="mg">Message</label>
+            <div class="control">
+                <textarea id="mg" formControlName="message"></textarea>
+                <div class="errors" [ngClass]="helper.HasError(helper.MessageControl) ? 'err':''">
+                    <ul>
+                        <li><span>{{helper.ErrorMessage(helper.MessageControl)}}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit">Request Your Consultation</button>
+        </div>
+        <div class="row">
+            <p class="highlight-text">Call Now:
+                <a (click)="CaptureClicks('contact_form_secondary_cta_bng')" href="tel:+919845812673">Bengaluru&nbsp;&nbsp;+91-98458 12673</a>
+                <a (click)="CaptureClicks('contact_form_secondary_cta_bhu')" href="tel:+919845812673">Bhubaneswar&nbsp;&nbsp;+91-98458 12673</a>
+                <a (click)="CaptureClicks('contact_form_secondary_cta_ctk')" href="tel:+919845812673">Cuttack&nbsp;&nbsp;+91-98458 12673</a>
+            </p>
+        </div>
+    </form>
+</section>
