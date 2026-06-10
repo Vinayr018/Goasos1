@@ -1,36 +1,49 @@
 @use "@angular/material" as mat;
 @include mat.core();
 
-// Premium Color System
-$primary-color: #0066cc;
-$primary-dark: #004499;
-$primary-light: #3d94ff;
-$secondary-color: #f5f5f5;
-$accent-color: #00a7f8;
-$bg-color: #fafbfc;
-$bg-dark: #f0f3f7;
-$text-primary: #1a1a1a;
-$text-secondary: #555555;
-$text-light: #888888;
-$border-color: #e0e0e0;
-$success-color: #2ecc71;
+// ============================================
+// ULTRA PREMIUM DARK THEME - GOAS DESIGN SYSTEM
+// ============================================
 
-// Material Theme Configuration
+// Background Colors
+$bg-base: #020617;
+$bg-layer-2: #0A1628;
+$bg-layer-3: #0F1F35;
+
+// Brand Colors
+$primary-color: #2563EB;
+$primary-hover: #1D4ED8;
+$accent-cyan: #38BDF8;
+$accent-teal: #14B8A6;
+$highlight-gold: #F59E0B;
+
+// Text Colors
+$text-primary: #FFFFFF;
+$text-secondary: #94A3B8;
+$text-muted: #475569;
+
+// Borders & Glass
+$border-subtle: rgba(255, 255, 255, 0.06);
+$border-active: rgba(56, 189, 248, 0.3);
+$glass-fill: rgba(255, 255, 255, 0.03);
+$glass-fill-hover: rgba(255, 255, 255, 0.07);
+
+// Material Dark Theme
 $md-primary: (
-  50: #e3f2fd,
-  100: #bbdefb,
-  200: #90caf9,
-  300: #64b5f6,
-  400: #42a5f5,
-  500: #0066cc,
-  600: #004499,
-  700: #003d80,
-  800: #003366,
-  900: #002b52,
-  A100: #3d94ff,
-  A200: #0a47ff,
-  A400: #002bff,
-  A700: #0020e6,
+  50: #eff6ff,
+  100: #dbeafe,
+  200: #bfdbfe,
+  300: #93c5fd,
+  400: #60a5fa,
+  500: #2563EB,
+  600: #1D4ED8,
+  700: #1e40af,
+  800: #1e3a8a,
+  900: #172554,
+  A100: #38BDF8,
+  A200: #0ea5e9,
+  A400: #0284c7,
+  A700: #0369a1,
   contrast: (
     50: #000000,
     100: #000000,
@@ -53,29 +66,26 @@ $goasos-primary: mat.m2-define-palette($md-primary);
 $goasos-accent: mat.m2-define-palette($md-primary);
 $goasos-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$goasos-theme: mat.m2-define-light-theme(
+$goasos-theme: mat.m2-define-dark-theme(
   (
     color: (
       primary: $goasos-primary,
-      accent: $goasos-primary,
+      accent: $goasos-accent,
       warn: $goasos-warn
     )
   )
 );
 
-@include mat.all-component-themes($goasos-theme);
+@include mat.all-component-colors($goasos-theme);
+
+// ============================================
+// GLOBAL BASE STYLES
+// ============================================
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.ubuntu-sans-goasos {
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
 
 html {
@@ -86,106 +96,68 @@ html,
 body {
   height: 100%;
 }
+
 body {
   min-height: 100vh;
-  font-family: "Ubuntu Sans", sans-serif;
-  font-size: 1.1rem;
-  background-color: $bg-color;
+  font-family: "Inter", "DM Sans", "Ubuntu Sans", sans-serif;
+  font-size: 1rem;
+  background-color: $bg-base;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 50%);
   color: $text-primary;
-  line-height: 1.6;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
 a,
 button,
-input {
+input,
+textarea,
+select {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
 }
-// Premium Text Styles
-.highlight-text {
-  color: $primary-color;
-  font-weight: 600;
-}
 
-.premium-heading {
-  font-size: 2.5rem;
+// ============================================
+// TYPOGRAPHY SYSTEM
+// ============================================
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: $text-primary;
-  margin-bottom: 1rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.8rem;
-  }
 }
 
-.subheading {
-  font-size: 1.25rem;
-  color: $text-secondary;
-  line-height: 1.6;
-  font-weight: 400;
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.08;
 }
 
-// List Styles
-@mixin list-spacing {
-  margin: 0.5em 0;
-}
-ul.card-list {
-  list-style-type: none;
-  margin-top: 0.8em;
-  > li {
-    @include list-spacing();
-    color: $text-secondary;
-    &::before {
-      content: "→";
-      margin-right: 0.8em;
-      color: $primary-color;
-      font-weight: 600;
-    }
-  }
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
 }
 
-// Premium Animation Keyframes
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  99% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0);
-  }
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
 }
+
+.monospace-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $accent-cyan;
+}
+
+// ============================================
+// ANIMATION KEYFRAMES
+// ============================================
 
 @keyframes fadeInUp {
   from {
@@ -198,14 +170,12 @@ ul.card-list {
   }
 }
 
-@keyframes scaleIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.95);
   }
   to {
     opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -220,87 +190,377 @@ ul.card-list {
   }
 }
 
-// Premium Grid Layouts
-// Premium Three-Card Grid
-.three-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2.5em;
-  justify-items: center;
-  padding: 1em 0;
-  
-  @media (max-width: 1597px) {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2em;
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
   }
-  @media (max-width: 961px) {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.8em;
-  }
-  @media (max-width: 680px) {
-    grid-template-columns: 1fr;
-    gap: 1.5em;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-// Premium Card Styles
-.premium-card {
-  background: white;
-  border-radius: 8px;
-  padding: 2em;
-  border: 1px solid $border-color;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
 
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.8);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+// ============================================
+// GLASSMORPHISM MIXIN
+// ============================================
+
+@mixin glassmorphism($blur: 16px) {
+  background: $glass-fill;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $border-subtle;
+  
   &:hover {
-    border-color: $primary-color;
-    box-shadow: 0 8px 24px rgba(0, 102, 204, 0.1);
+    background: $glass-fill-hover;
+    border-color: $border-active;
+  }
+}
+
+// ============================================
+// CARD SYSTEM
+// ============================================
+
+.glass-card {
+  @include glassmorphism(16px);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  &:hover {
     transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
   }
+}
 
+.premium-card {
+  @include glassmorphism(16px);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
   h3 {
-    color: $primary-color;
-    font-size: 1.25rem;
-    margin-bottom: 0.8em;
-    font-weight: 600;
+    color: $accent-cyan;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
   }
-
+  
   p {
     color: $text-secondary;
     line-height: 1.7;
   }
-}
-
-@keyframes come-in-ltr {
-  from {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
+  
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(56, 189, 248, 0.2);
+    border-color: $accent-cyan;
   }
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
+// ============================================
+// BUTTON STYLES
+// ============================================
+
+@mixin btn-primary {
+  background: linear-gradient(135deg, $primary-color, $accent-cyan);
+  color: #ffffff;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
   }
-  to {
-    opacity: 1;
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  &:hover {
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@mixin btn-secondary {
+  background: transparent;
+  color: $accent-cyan;
+  border: 2px solid $accent-cyan;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(56, 189, 248, 0.1);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
   }
 }
 
-// Premium Video Control Button
+button.btn-primary {
+  @include btn-primary;
+}
+
+button.btn-secondary {
+  @include btn-secondary;
+}
+
+a.btn-primary {
+  @include btn-primary;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a.btn-secondary {
+  @include btn-secondary;
+  display: inline-block;
+  text-decoration: none;
+}
+
+// ============================================
+// GRID LAYOUTS
+// ============================================
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-4-col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ============================================
+// FORM STYLING
+// ============================================
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 16px;
+  background: $glass-fill;
+  border: 1px solid $border-subtle;
+  border-radius: 8px;
+  color: $text-primary;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  
+  &::placeholder {
+    color: $text-muted;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    background: $glass-fill-hover;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  }
+}
+
+// ============================================
+// UTILITY CLASSES
+// ============================================
+
+.text-gradient {
+  background: linear-gradient(135deg, $text-primary 0%, $accent-cyan 50%, $primary-color 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-gradient {
+  border: 1px solid;
+  border-image: linear-gradient(135deg, $primary-color, $accent-cyan) 1;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+}
+
+.shadow-glow-lg {
+  box-shadow: 0 0 60px rgba(37, 99, 235, 0.4);
+}
+
+// ============================================
+// LEGACY STYLES (EXISTING CONTENT PRESERVATION)
+// ============================================
+
+.ubuntu-sans-goasos {
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.three-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  
+  @media (max-width: 961px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+ul.card-list {
+  list-style-type: none;
+  margin-top: 16px;
+  
+  > li {
+    margin: 8px 0;
+    color: $text-secondary;
+    
+    &::before {
+      content: "→";
+      margin-right: 12px;
+      color: $accent-cyan;
+      font-weight: 600;
+    }
+  }
+}
+
+div.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  
+  @media (max-width: 1597px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media (max-width: 961px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  @include glassmorphism(12px);
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(56, 189, 248, 0.25);
+    border-color: $accent-cyan;
+  }
+  
+  .mat-mdc-card-title {
+    font-weight: 700;
+    color: $accent-cyan;
+    font-size: 1.15rem;
+  }
+  
+  img {
+    margin: 16px 0;
+    height: 155px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.06);
+  }
+}
+
 button.product-video-control {
   background-color: transparent;
   border: transparent;
@@ -308,245 +568,118 @@ button.product-video-control {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 1em 1.3em;
+  padding: 12px 16px;
   cursor: pointer;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  border-radius: 6px;
-  
-  @media (max-width: 799px) {
-    gap: 5px;
-    padding: 10px;
-  }
-  @media (max-width: 588px) {
-    padding: 5px;
-    gap: unset;
-  }
   
   > .ico {
     height: 2rem;
-    font-size: 2rem;
     width: 2rem;
     transition: all 0.3s ease;
-    
-    @media (max-width: 799px) {
-      height: 1rem;
-      font-size: 1rem;
-      width: 1rem;
-    }
-  }
-  
-  > span {
-    font-weight: 500;
   }
   
   &:hover:not(.active) {
-    background-color: rgba(0, 102, 204, 0.05);
-    color: $primary-color;
+    background-color: rgba(56, 189, 248, 0.1);
+    color: $accent-cyan;
   }
   
   &.active {
-    background-color: rgba(0, 102, 204, 0.1);
-    color: $primary-color;
-    
-    > .ico {
-      fill: $primary-color;
-    }
+    background-color: rgba(56, 189, 248, 0.15);
+    color: $accent-cyan;
   }
 }
 
-ul.strong-bullet-points {
-  list-style: none;
+ul.drop-menu {
   > li {
-    > h3,
-    strong {
-      &::after {
-        content: "-";
-        margin-left: 6px;
-        margin-right: 8px;
-      }
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+    
+    &:hover,
+    &.active {
+      color: $accent-cyan;
     }
   }
 }
 
 .goas-dialog-panel {
   user-select: none;
+  
   .mat-mdc-dialog-surface {
-    &.mdc-dialog__surface{
-      background-color: transparent !important;
-      box-shadow: none !important;
-    }
+    background: $glass-fill !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid $border-subtle !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
   }
 }
 
 .goasos {
-  margin-top: 1em !important;
-  .mat-mdc-snackbar-surface {
-    background-color: white !important;
-    color: black !important;
+  margin-top: 16px !important;
+  
+  .mat-mdc-snack-bar-container {
+    @include glassmorphism(16px);
   }
 }
 
-// Premium Product Cards Grid
-div.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 2em;
-  justify-items: center;
-  
-  @media (max-width: 1597px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  @media (max-width: 961px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media (max-width: 680px) {
-    grid-template-columns: 1fr;
-  }
-  
-  > div.ca {
-    width: 300px;
-  }
-}
-
-.product-card {
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid $border-color;
-  
-  &:hover {
-    border-color: $primary-color;
-    box-shadow: 0 12px 28px rgba(0, 102, 204, 0.15);
-    transform: translateY(-6px);
-  }
-  
-  .mat-mdc-card-title {
-    font-weight: 600;
-    color: $primary-color;
-    font-size: 1.1rem;
-  }
-  
-  img {
-    margin: 1em 0;
-    height: 155px;
-    max-width: 300px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  &:hover img {
-    transform: scale(1.05);
-  }
-}
 h4.products-header {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  
   > span {
     flex: 1;
   }
+  
   > span.divider-left,
   > span.divider-right {
     display: inline-block;
     height: 1px;
     width: 100%;
-    background-color: black;
+    background: linear-gradient(90deg, transparent, $border-subtle, transparent);
     position: relative;
-    &::after {
-      content: "\2715";
-      position: absolute;
-      top: -1em;
-      padding: 10px;
-    }
   }
 }
 
 .mat-divider.contact {
   margin: 10px 0;
+  border-color: $border-subtle;
 }
-
-// div.contact-container {
-//   background-color: white;
-//   border-radius: 4px;
-//   padding: 1em;
-//   box-shadow:
-//       0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-//       0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-//       0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-//   user-select: none;
-//   opacity: 0;
-//   animation: appear 0.4s ease-in 0s 1 forwards;
-//   &:nth-child(1) {
-//       animation-delay: 0.6s;
-//   }
-//   &:nth-child(2) {
-//       animation-delay: 0.8s;
-//   }
-//   &:nth-child(3) {
-//       animation-delay: 1s;
-//   }
-//   > p.heading {
-//       font-weight: 600;
-//       margin-bottom: 1em;
-//       text-align: center;
-//   }
-//   > div.cnt-rest {
-//       margin-top: 1em;
-//       &.call {
-//           display: flex;
-//           flex-direction: column;
-//           gap: 10px;
-//           > a {
-//               text-decoration: none;
-//               display: flex;
-//               justify-content: center;
-//               align-items: center;
-//               gap: 10px;
-//           }
-//       }
-//       &.social {
-//           > ul.social {
-//               list-style: none;
-//               display: flex;
-//               justify-content: center;
-//               gap: 10px;
-//               > li {
-//                   animation: rotate 0.4s ease-in-out 1.1s 1 forwards;
-//                   > a {
-//                       font-size: inherit;
-//                       > svg {
-//                           height: 1.3em;
-//                           > path {
-//                           }
-//                       }
-//                   }
-//                   &:nth-child(2) {
-//                       animation-delay: 1.2s;
-//                   }
-//                   &:nth-child(3) {
-//                       animation-delay: 1.3s;
-//                   }
-//               }
-//           }
-//       }
-//   }
-// }
 
 .mat-expansion-panel-header.contact-header {
-  font-weight: bold;
+  font-weight: 600;
+  color: $text-primary;
 }
-// input, button, select, optgroup, textarea {
-//   font-size: ;
-// }
 
-ul.drop-menu {
-  > li {
-    padding: 10px 15px;
-    &:hover,
-    &.active {
-      color: #00a7f8;
-    }
+// ============================================
+// SCROLL PROGRESS BAR
+// ============================================
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, $primary-color, $accent-cyan, $accent-teal);
+  z-index: 1000;
+  width: 0%;
+}
+
+// ============================================
+// RESPONSIVE UTILITIES
+// ============================================
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
   }
 }

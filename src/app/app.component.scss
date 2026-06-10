@@ -1,84 +1,134 @@
+// ============================================
+// ULTRA PREMIUM DARK THEME - APP LAYOUT
+// ============================================
+
 $breaking-point: 1376px;
-$bg-color: #fafbfc;
-$bg-light: #f0f3f7;
+$bg-base: #020617;
+$bg-layer-2: #0A1628;
+$border-subtle: rgba(255, 255, 255, 0.06);
+$accent-cyan: #38BDF8;
 
 div.main-wrapper {
-    overflow: hidden;
-    background-color: $bg-color;
+  overflow: hidden;
+  background-color: $bg-base;
+  min-height: 100vh;
+  
+  > div.main-header {
+    margin-bottom: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  > div.main-body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: calc(100vh - 64px);
     
-    > div.main-header {
-        margin-bottom: 0;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    @media (max-width: $breaking-point) {
+      grid-template-columns: 1fr;
+      position: relative;
     }
     
-    > div.main-body {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        height: calc(100vh - 89px);
+    > div.main-menu {
+      padding: 1.5em;
+      padding-top: 1em;
+      min-height: 100%;
+      background: linear-gradient(180deg, $bg-layer-2 0%, $bg-base 100%);
+      border-right: 1px solid $border-subtle;
+      overflow-y: auto;
+      
+      > button.mobile-show {
+        display: none;
+      }
+      
+      @media (max-width: $breaking-point) {
+        position: fixed;
+        left: -310px;
+        top: 0;
+        bottom: 0;
+        width: 310px;
+        background: linear-gradient(180deg, $bg-layer-2 0%, $bg-base 100%);
+        z-index: 200;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-right: 1px solid $border-subtle;
+        padding-top: 3em;
         
-        @media (max-width: $breaking-point) {
-            grid-template-columns: 1fr;
-            position: relative;
+        &.show {
+          left: 0;
         }
         
-        > div.main-menu {
-            padding: 1em;
-            padding-top: 10px;
-            height: 100%;
-            background-color: white;
-            border-right: 1px solid #e0e0e0;
-            
-            > button.mobile-show {
-                display: none;
-            }
-            
-            @media (max-width: $breaking-point) {
-                position: absolute;
-                left: -271px;
-                top: 0;
-                bottom: 0;
-                background-color: white;
-                z-index: 3;
-                box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.15);
-                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                border-right: 1px solid #e0e0e0;
-                
-                &.show {
-                    left: 0;
-                }
-                
-                > button.mobile-show {
-                    display: inline-block;
-                    position: absolute;
-                    top: 50%;
-                    right: -40px;
-                    background: white;
-                    padding: 2px 10px;
-                    font-size: 1.4em;
-                    border: transparent;
-                    outline: none;
-                    color: #0066cc;
-                }
-            }
+        > button.mobile-show {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 50%;
+          right: -45px;
+          transform: translateY(-50%);
+          background: rgba(37, 99, 235, 0.2);
+          backdrop-filter: blur(10px);
+          padding: 8px;
+          font-size: 1.5em;
+          border: 1px solid $border-subtle;
+          outline: none;
+          border-radius: 8px;
+          color: $accent-cyan;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: rgba(37, 99, 235, 0.4);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+          }
         }
-        
-        > div.main-content {
-            padding: 0;
-            overflow-y: auto;
-            overflow-x: hidden;
-            height: 100%;
-            background-color: $bg-color;
-            
-            > section.float-contact {
-                position: fixed;
-                bottom: 0.1em;
-                right: 2em;
-                z-index: 4;
-                
-                @media (max-width: 648px) {
-                    right: 1em;
-                }
-            }
-        }
+      }
     }
+    
+    > div.main-content {
+      padding: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      min-height: 100%;
+      background-color: $bg-base;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 50%);
+      
+      > section.float-contact {
+        position: fixed;
+        bottom: 2em;
+        right: 2em;
+        z-index: 50;
+        
+        @media (max-width: 648px) {
+          right: 1em;
+          bottom: 1em;
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// SCROLLBAR STYLING
+// ============================================
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.3);
+  border-radius: 4px;
+  
+  &:hover {
+    background: rgba(37, 99, 235, 0.5);
+  }
 }

@@ -1,226 +1,358 @@
-// Premium Color System
-$primary-color: #0066cc;
-$primary-dark: #004499;
-$primary-light: #3d94ff;
-$bg-color: white;
-$bg-light: #fafbfc;
-$text-primary: #1a1a1a;
-$text-secondary: #555555;
-$text-light: #888888;
-$border-color: #e0e0e0;
+// ============================================
+// ULTRA PREMIUM DARK THEME - MAIN HOME
+// ============================================
 
-@mixin premium-cta {
-    color: $primary-color;
-    border: 2px solid $primary-color;
-    background: transparent;
-    
-    &:hover {
-        background: $primary-color;
-        color: white;
-    }
+$bg-base: #020617;
+$bg-layer-2: #0A1628;
+$bg-layer-3: #0F1F35;
+$primary-color: #2563EB;
+$primary-hover: #1D4ED8;
+$accent-cyan: #38BDF8;
+$accent-teal: #14B8A6;
+$highlight-gold: #F59E0B;
+$text-primary: #FFFFFF;
+$text-secondary: #94A3B8;
+$text-muted: #475569;
+$border-subtle: rgba(255, 255, 255, 0.06);
+$border-active: rgba(56, 189, 248, 0.3);
+$glass-fill: rgba(255, 255, 255, 0.03);
+
+// ============================================
+// BUTTON MIXINS
+// ============================================
+
+@mixin cta-button {
+  color: $accent-cyan;
+  border: 2px solid $accent-cyan;
+  background: transparent;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  
+  &:hover {
+    background: rgba(56, 189, 248, 0.1);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    transform: translateY(-2px);
+  }
 }
 
-@mixin premium-anchor-btn {
-    padding: 0.75em 1.5em;
-    cursor: pointer;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
+// ============================================
+// LAYOUT UTILITIES
+// ============================================
 
 .space-it {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
+// ============================================
+// MAIN HOME WRAPPER
+// ============================================
+
 div.main-home-wrapper {
-    > section.block {
-        padding: 4em 2em;
-        
-        > h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: $text-primary;
-            margin-bottom: 2em;
-            letter-spacing: -0.01em;
-        }
-        
-        &.about {
-            padding-left: 0;
-            background: $bg-light;
-            
-            @media (max-width:1376px) {
-                padding-right: 0;
-            }
-            > h2 {
-                margin-left: 2em;
-            }
-            > section.grid {
-                text-align: initial;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                margin-bottom: 2em;
-                gap: 2em;
-                justify-content: center;
-                align-content: center;
-                
-                @media (max-width: 1329px) {
-                    grid-template-columns: 1fr;
-                    padding: 0 2em;
-                }
-                
-                mat-card {
-                    background: white;
-                    border: 1px solid $border-color;
-                    border-radius: 8px;
-                    padding: 2em;
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                    
-                    &:hover {
-                        border-color: $primary-color;
-                        box-shadow: 0 8px 24px rgba(0, 102, 204, 0.1);
-                        transform: translateY(-4px);
-                    }
-                    
-                    h3 {
-                        color: $primary-color;
-                        margin-bottom: 0.8em;
-                        font-weight: 600;
-                        font-size: 1.15rem;
-                    }
-                    
-                    p, ul {
-                        color: $text-secondary;
-                        line-height: 1.7;
-                    }
-                    
-                    ul.card-lst {
-                        margin-left: 1.5em;
-                    }
-                }
-            }
-            > a {
-                display: inline-block;
-                @include premium-cta();
-                @include premium-anchor-btn();
-                margin-left: 2em;
-            }
-        }
-        
-        &.home-automation {
-            padding-left: 0;
-            @media (max-width:1376px) {
-                padding-right: 0;
-            }
-            > h2 {
-                margin-left: 2em;
-            }
-            > div.auto-sol {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                @media (max-width: 1296px) {
-                    grid-template-columns: 1fr 1fr;
-                    justify-content: center;
-                }
-                @media (max-width: 934px) {
-                    grid-template-columns: 1fr;
-                    justify-content: center;
-                }
-                gap: 2em;
-                padding: 0 2em;
-                
-                mat-card.space-it {
-                    background: white;
-                    border: 1px solid $border-color;
-                    border-radius: 8px;
-                    padding: 2em;
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                    
-                    &:hover {
-                        border-color: $primary-color;
-                        box-shadow: 0 12px 32px rgba(0, 102, 204, 0.15);
-                        transform: translateY(-6px);
-                    }
-                    
-                    h3 {
-                        color: $primary-color;
-                        font-size: 1.1rem;
-                        margin-bottom: 0.8em;
-                        font-weight: 600;
-                    }
-                    
-                    p {
-                        color: $text-secondary;
-                        line-height: 1.7;
-                        margin-bottom: 1.5em;
-                    }
-                }
-                
-                a.card-cta {
-                    color: $primary-color;
-                    cursor: pointer;
-                    padding: 0.5em;
-                    font-weight: 500;
-                    transition: all 0.2s ease;
-                    
-                    &:hover {
-                        text-decoration: underline;
-                        transform: translateX(4px);
-                    }
-                }
-            }
-        }
-        
-        &.consulting {
-            padding-left: 0;
-            background: $bg-light;
-            
-            @media (max-width:1376px) {
-                padding-right: 0;
-            }
-            > h2 {
-                padding-left: 2em;
-            }
-            > section.consult-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 2em;
-                padding: 0 2em;
-                margin-bottom: 2em;
-                
-                @media (max-width: 855px) {
-                    grid-template-columns: 1fr;
-                }
-                > section.consul-type {
-                    background: white;
-                    border: 1px solid $border-color;
-                    padding: 2em;
-                    border-radius: 8px;
-                    transition: all 0.3s ease;
-                    
-                    &:hover {
-                        border-color: $primary-color;
-                        box-shadow: 0 8px 24px rgba(0, 102, 204, 0.1);
-                    }
-                    
-                    > h3 {
-                        color: $primary-color;
-                        margin: 0 0 0.8em 0;
-                        font-weight: 600;
-                        font-size: 1.1rem;
-                    }
-                    > p {
-                        color: $text-secondary;
-                        line-height: 1.7;
-                    }
-                }
-            }
-            > a {
-                display: inline-block;
-                @include premium-cta();
-                @include premium-anchor-btn();
-                margin-left: 2em;
-            }
-        }
+  > section.block {
+    padding: 5em 3em;
+    background: linear-gradient(180deg, transparent 0%, rgba(37, 99, 235, 0.05) 50%, transparent 100%);
+    
+    @media (max-width: 1376px) {
+      padding: 4em 2em;
     }
+    
+    @media (max-width: 768px) {
+      padding: 3em 1.5em;
+    }
+    
+    > h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: $text-primary;
+      margin-bottom: 3em;
+      letter-spacing: -0.03em;
+      
+      .text-gradient {
+        background: linear-gradient(135deg, $text-primary 0%, $accent-cyan 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+    
+    // ============================================
+    // ABOUT SECTION
+    // ============================================
+    
+    &.about {
+      background: linear-gradient(135deg, rgba(15, 31, 53, 0.5) 0%, transparent 100%);
+      border-top: 1px solid $border-subtle;
+      border-bottom: 1px solid $border-subtle;
+      
+      @media (max-width: 1376px) {
+        padding-right: 3em;
+      }
+      
+      > h2 {
+        padding-left: 0;
+      }
+      
+      > section.grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5em;
+        margin-bottom: 3em;
+        
+        @media (max-width: 1329px) {
+          grid-template-columns: 1fr;
+        }
+        
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+          gap: 2em;
+        }
+        
+        mat-card {
+          background: $glass-fill;
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid $border-subtle;
+          border-radius: 12px;
+          padding: 2.5em;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          
+          &:hover {
+            border-color: $border-active;
+            background: rgba(56, 189, 248, 0.05);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+            transform: translateY(-6px);
+          }
+          
+          h3 {
+            color: $accent-cyan;
+            margin-bottom: 1em;
+            font-weight: 700;
+            font-size: 1.25rem;
+          }
+          
+          p,
+          ul {
+            color: $text-secondary;
+            line-height: 1.7;
+            font-size: 0.95rem;
+          }
+          
+          ul.card-lst {
+            margin: 1em 0 0 1.5em;
+            
+            li {
+              margin-bottom: 0.5em;
+              
+              &::before {
+                color: $accent-cyan;
+              }
+            }
+          }
+        }
+      }
+      
+      > a {
+        @include cta-button;
+      }
+    }
+    
+    // ============================================
+    // HOME AUTOMATION SECTION
+    // ============================================
+    
+    &.home-automation {
+      @media (max-width: 1376px) {
+        padding-right: 3em;
+      }
+      
+      > h2 {
+        padding-left: 0;
+      }
+      
+      > div.auto-sol {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5em;
+        
+        @media (max-width: 1296px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        @media (max-width: 934px) {
+          grid-template-columns: 1fr;
+        }
+        
+        mat-card.space-it {
+          background: $glass-fill;
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid $border-subtle;
+          border-radius: 12px;
+          padding: 2.5em;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          min-height: 320px;
+          
+          &:hover {
+            border-color: $border-active;
+            background: rgba(56, 189, 248, 0.05);
+            box-shadow: 0 20px 50px rgba(56, 189, 248, 0.2);
+            transform: translateY(-8px);
+            
+            h3 {
+              color: $accent-cyan;
+            }
+            
+            a.card-cta {
+              transform: translateX(6px);
+            }
+          }
+          
+          h3 {
+            color: $accent-cyan;
+            font-size: 1.25rem;
+            margin-bottom: 1em;
+            font-weight: 700;
+            transition: color 0.3s ease;
+          }
+          
+          p {
+            color: $text-secondary;
+            line-height: 1.7;
+            margin-bottom: 1.5em;
+            flex-grow: 1;
+          }
+          
+          a.card-cta {
+            color: $accent-cyan;
+            cursor: pointer;
+            padding: 0;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            width: fit-content;
+            
+            &::after {
+              content: '→';
+              transition: transform 0.3s ease;
+            }
+          }
+        }
+      }
+    }
+    
+    // ============================================
+    // CONSULTING SECTION
+    // ============================================
+    
+    &.consulting {
+      background: linear-gradient(135deg, rgba(15, 31, 53, 0.5) 0%, transparent 100%);
+      border-top: 1px solid $border-subtle;
+      border-bottom: 1px solid $border-subtle;
+      
+      @media (max-width: 1376px) {
+        padding-right: 3em;
+      }
+      
+      > h2 {
+        padding-left: 0;
+      }
+      
+      > section.consult-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5em;
+        margin-bottom: 3em;
+        
+        @media (max-width: 855px) {
+          grid-template-columns: 1fr;
+        }
+        
+        > section.consul-type {
+          background: $glass-fill;
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid $border-subtle;
+          padding: 2.5em;
+          border-radius: 12px;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          position: relative;
+          overflow: hidden;
+          
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: linear-gradient(180deg, $primary-color, $accent-cyan);
+            transition: height 0.3s ease;
+          }
+          
+          &:hover {
+            border-color: $border-active;
+            background: rgba(56, 189, 248, 0.05);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+            
+            &::before {
+              height: 100%;
+            }
+          }
+          
+          > h3 {
+            color: $accent-cyan;
+            margin-bottom: 1em;
+            font-weight: 700;
+            font-size: 1.1rem;
+          }
+          
+          > p {
+            color: $text-secondary;
+            line-height: 1.7;
+            font-size: 0.95rem;
+          }
+        }
+      }
+      
+      > a {
+        @include cta-button;
+      }
+    }
+  }
+}
+
+// ============================================
+// ANIMATION
+// ============================================
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+mat-card {
+  animation: slideUp 0.6s ease-out forwards;
+  
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: 0.1s * $i;
+    }
+  }
 }

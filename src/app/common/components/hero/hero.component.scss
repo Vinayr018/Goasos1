@@ -1,189 +1,350 @@
-// Premium Color System
-$primary-color: #0066cc;
-$primary-dark: #004499;
-$primary-light: #3d94ff;
-$bg-color: white;
-$bg-light: #fafbfc;
-$text-primary: #1a1a1a;
-$text-secondary: #555555;
-$text-light: #888888;
+// ============================================
+// ULTRA PREMIUM DARK THEME - HERO SECTION
+// ============================================
 
-@mixin premium-cta {
-    padding: 0.9em 2em;
-    cursor: pointer;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-weight: 500;
-    font-size: 1rem;
+$bg-base: #020617;
+$bg-layer-2: #0A1628;
+$primary-color: #2563EB;
+$primary-hover: #1D4ED8;
+$accent-cyan: #38BDF8;
+$accent-teal: #14B8A6;
+$text-primary: #FFFFFF;
+$text-secondary: #94A3B8;
+$text-muted: #475569;
+$border-subtle: rgba(255, 255, 255, 0.06);
+$glass-fill: rgba(255, 255, 255, 0.03);
+
+// ============================================
+// BUTTON STYLES
+// ============================================
+
+@mixin btn-primary {
+  background: linear-gradient(135deg, #2563EB, #38BDF8);
+  color: #ffffff;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  &:hover {
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+  }
 }
 
-section.block {
-    padding: 2em 1em;
-    padding-bottom: 1em;
-    > h2 {
-        margin-bottom: 0.25em;
-    }
-    &.hero {
-        padding: 4em 2em;
-        margin-bottom: 0;
-        min-height: 60vh;
-        background: linear-gradient(135deg, $bg-light 0%, white 50%, #f0f3f7 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        
-        @media (max-width: 981px) {
-            height: 100%;
-            padding: 3em 1.5em;
-            min-height: auto;
-        }
-        @media (max-width: 567px) {
-            padding: 2em 1em;
-        }
-        
-        > * {
-            max-width: 85%;
-            margin: 1em auto;
-            text-align: center;
-        }
-        
-        > h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: $text-primary;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            width: 100%;
-            max-width: 900px;
-            animation: fadeInUp 0.8s ease-out;
-            
-            @media (max-width: 938px) {
-                font-size: 2.2rem;
-            }
-            @media (max-width: 677px) {
-                font-size: 1.8rem;
-            }
-            @media (max-width: 567px) {
-                font-size: 1.5rem;
-                margin: 0.5em 0;
-            }
-        }
-        
-        > p {
-            font-size: 1.1rem;
-            color: $text-secondary;
-            line-height: 1.7;
-            max-width: 700px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-            
-            @media (max-width: 567px) {
-                font-size: 1rem;
-                margin: 1em 0;
-            }
-        }
-        
-        div.actions {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5em;
-            margin-top: 2em;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-            
-            @media (max-width: 567px) {
-                flex-direction: column;
-                gap: 1em;
-                width: 100%;
-            }
-            
-            > a {
-                @include premium-cta();
-                
-                &.pri {
-                    color: white;
-                    background-color: $primary-color;
-                    border: 2px solid $primary-color;
-                    
-                    &:hover {
-                        background-color: $primary-dark;
-                        border-color: $primary-dark;
-                        transform: translateY(-2px);
-                        box-shadow: 0 8px 16px rgba(0, 102, 204, 0.3);
-                    }
-                }
-                
-                &.sec {
-                    color: $primary-color;
-                    background: transparent;
-                    border: 2px solid $primary-color;
-                    
-                    &:hover {
-                        background-color: rgba(0, 102, 204, 0.05);
-                        transform: translateY(-2px);
-                    }
-                    
-                    @media (max-width: 567px) {
-                        width: 100%;
-                    }
-                    @media (max-width:607px) {
-                        border: transparent;
-                        text-decoration: underline;
-                        padding: 0;
-                    }
-                }
-            }
-        }
-        
-        > div.trust {
-            margin-top: 3em;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-            
-            > p {
-                color: $text-light;
-                font-size: 0.95rem;
-                margin-bottom: 1.5em;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                font-weight: 600;
-            }
-            
-            > div.client-logos {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 2.5em;
-                padding-top: 1em;
-                flex-wrap: wrap;
-                
-                @media (max-width: 567px) {
-                    gap: 1.5em;
-                }
-                
-                > img {
-                    height: 40px;
-                    object-fit: contain;
-                    opacity: 0.7;
-                    transition: opacity 0.3s ease;
-                    
-                    &:hover {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-    }
+@mixin btn-secondary {
+  background: transparent;
+  color: $accent-cyan;
+  border: 2px solid $accent-cyan;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(56, 189, 248, 0.1);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+  }
 }
+
+// ============================================
+// KEYFRAMES
+// ============================================
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// ============================================
+// HERO SECTION STYLES
+// ============================================
+
+section.block {
+  padding: 2em 1em;
+  padding-bottom: 1em;
+  
+  > h2 {
+    margin-bottom: 0.25em;
+  }
+  
+  &.hero {
+    padding: 0;
+    margin-bottom: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, transparent 30%, transparent 70%, rgba(20, 184, 166, 0.05) 100%),
+                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 50%);
+    background-color: $bg-base;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    overflow: hidden;
+    
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding: 4em 2em;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    @media (max-width: 768px) {
+      padding: 3em 1.5em;
     }
+    
+    @media (max-width: 567px) {
+      padding: 2em 1em;
+    }
+    
+    // Left Column - Content
+    > div:nth-child(1) {
+      max-width: 600px;
+      z-index: 2;
+      padding: 4em 2em;
+      
+      @media (max-width: 1024px) {
+        padding: 2em;
+        text-align: center;
+      }
+      
+      // Eyebrow tag
+      > span {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.875rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $accent-cyan;
+        margin-bottom: 1.5em;
+        animation: fadeInUp 0.8s ease-out;
+      }
+      
+      // Headline
+      > h1 {
+        font-size: clamp(2.8rem, 6vw, 5.5rem);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        color: $text-primary;
+        margin-bottom: 1.5em;
+        animation: fadeInUp 0.8s ease-out 0.1s both;
+        
+        // Gradient text on key words
+        .gradient-text {
+          background: linear-gradient(135deg, $text-primary 0%, $accent-cyan 50%, $primary-color 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+      }
+      
+      // Body paragraph
+      > p {
+        font-size: 1.15rem;
+        color: $text-secondary;
+        line-height: 1.7;
+        margin-bottom: 2em;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+      }
+      
+      // CTA Buttons
+      div.actions {
+        display: flex;
+        gap: 1.5em;
+        margin-bottom: 2em;
+        animation: fadeInUp 0.8s ease-out 0.3s both;
+        
+        @media (max-width: 768px) {
+          flex-wrap: wrap;
+        }
+        
+        a.pri {
+          @include btn-primary;
+        }
+        
+        a.sec {
+          @include btn-secondary;
+        }
+      }
+      
+      // Stats row
+      > div.trust {
+        margin-top: 3em;
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+        
+        > p {
+          color: $text-muted;
+          font-size: 0.875rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          font-weight: 600;
+          margin-bottom: 1.5em;
+        }
+        
+        > div.client-logos {
+          display: flex;
+          gap: 3em;
+          align-items: center;
+          flex-wrap: wrap;
+          
+          @media (max-width: 768px) {
+            justify-content: center;
+            gap: 1.5em;
+          }
+          
+          > img {
+            height: 40px;
+            object-fit: contain;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            filter: brightness(1.1);
+            
+            &:hover {
+              opacity: 1;
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+    
+    // Right Column - Visual
+    > div:nth-child(2) {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      @media (max-width: 1024px) {
+        display: none;
+      }
+      
+      // Hero image container with animated border
+      > img {
+        width: 90%;
+        height: 90%;
+        object-fit: cover;
+        border-radius: 16px;
+        animation: fadeInUp 0.8s ease-out 0.3s both;
+        box-shadow: 0 20px 60px rgba(37, 99, 235, 0.3);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        position: relative;
+        z-index: 2;
+      }
+      
+      // Floating data cards
+      > div.float-cards {
+        position: absolute;
+        z-index: 1;
+        
+        .data-card {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(16px);
+          border: 1px solid rgba(56, 189, 248, 0.2);
+          border-radius: 12px;
+          padding: 16px 24px;
+          animation: floatAnimation 3s ease-in-out infinite;
+          
+          .metric {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $accent-cyan;
+          }
+          
+          .label {
+            font-size: 0.875rem;
+            color: $text-secondary;
+            margin-top: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// RESPONSIVE ADJUSTMENTS
+// ============================================
+
+@media (max-width: 1024px) {
+  section.block.hero {
+    > div:nth-child(1) {
+      > h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section.block.hero {
+    > div:nth-child(1) {
+      padding: 1.5em;
+      
+      > h1 {
+        font-size: 2rem;
+      }
+      
+      > p {
+        font-size: 1rem;
+      }
+      
+      div.actions {
+        flex-direction: column;
+        gap: 1em;
+      }
+    }
+  }
 }
