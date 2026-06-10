@@ -1,22 +1,59 @@
-// Premium Contact Form Colors
-$primary-color: #0066cc;
-$primary-dark: #004499;
-$bg-color: white;
-$bg-light: #fafbfc;
-$text-primary: #1a1a1a;
-$text-secondary: #555555;
-$border-color: #e0e0e0;
+// ============================================
+// ULTRA PREMIUM DARK THEME - CONTACT FORM
+// ============================================
+
+$bg-base: #020617;
+$bg-layer-2: #0A1628;
+$bg-layer-3: #0F1F35;
+$primary-color: #2563EB;
+$primary-hover: #1D4ED8;
+$accent-cyan: #38BDF8;
+$accent-teal: #14B8A6;
+$text-primary: #FFFFFF;
+$text-secondary: #94A3B8;
+$text-muted: #475569;
+$border-subtle: rgba(255, 255, 255, 0.06);
+$border-active: rgba(56, 189, 248, 0.3);
+$glass-fill: rgba(255, 255, 255, 0.03);
+$glass-fill-hover: rgba(255, 255, 255, 0.07);
 
 section#contact-section {
-    padding: 3em 2em;
-    background: $bg-light;
+    padding: 6em 2em;
+    background: linear-gradient(180deg, $bg-base 0%, $bg-layer-2 50%, $bg-base 100%);
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 50%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+        animation: gradientFlow 20s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
     
     > h2 {
         margin-bottom: 0.5em;
         text-align: center;
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 700;
         color: $text-primary;
+        position: relative;
+        z-index: 2;
+        animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        .text-gradient {
+            background: linear-gradient(135deg, $text-primary 0%, $accent-cyan 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     }
     
     > h3 {
@@ -24,36 +61,48 @@ section#contact-section {
         text-align: center;
         font-size: 1.3rem;
         font-weight: 600;
-        color: $primary-color;
+        color: $accent-cyan;
+        position: relative;
+        z-index: 2;
+        animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
     }
     
     > p {
         text-align: center;
         color: $text-secondary;
-        margin-bottom: 2em;
+        margin-bottom: 3em;
         line-height: 1.6;
+        position: relative;
+        z-index: 2;
+        animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
     }
     
     > form {
         width: 90%;
         max-width: 700px;
         margin: 2em auto;
-        background-color: white;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        border-radius: 8px;
-        border: 1px solid $border-color;
-        padding: 2.5em;
+        background: $glass-fill;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 8px 32px rgba(37, 99, 235, 0.15),
+                    0 0 40px rgba(56, 189, 248, 0.1);
+        border-radius: 16px;
+        border: 1px solid $border-subtle;
+        padding: 3em;
+        position: relative;
+        z-index: 2;
+        animation: scaleInCenter 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
         
         @media (max-width:885px) {
             width: 100%;
-            padding: 2em;
+            padding: 2.5em;
         }
         
         > div.row {
-            margin-bottom: 1.5em;
+            margin-bottom: 2em;
             display: flex;
             align-items: flex-start;
-            gap: 1em;
+            gap: 1.5em;
             
             @media (max-width: 565px) {
                 flex-direction: column;
@@ -64,8 +113,10 @@ section#contact-section {
                 flex: 0.3;
                 margin-top: 12px;
                 color: $text-primary;
-                font-weight: 500;
+                font-weight: 600;
                 font-size: 0.95rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
                 
                 @media (max-width: 565px) {
                     width: 100%;
@@ -76,6 +127,7 @@ section#contact-section {
             > div.control {
                 flex: 0.7;
                 width: 100%;
+                position: relative;
                 
                 @media (max-width: 565px) {
                     width: 100%;
@@ -84,73 +136,99 @@ section#contact-section {
                 > input,
                 textarea,
                 select {
-                    padding: 0.9em;
+                    padding: 1em;
                     font-size: 0.95rem;
                     font-family: inherit;
                     display: block;
                     width: 100%;
-                    border: 1px solid $border-color;
-                    border-radius: 6px;
-                    background-color: #fafbfc;
+                    border: 1px solid $border-subtle;
+                    border-radius: 8px;
+                    background: rgba(255, 255, 255, 0.05);
+                    backdrop-filter: blur(8px);
                     color: $text-primary;
-                    transition: all 0.3s ease;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    
+                    &::placeholder {
+                        color: $text-muted;
+                    }
                     
                     &:focus {
                         outline: none;
-                        border-color: $primary-color;
-                        background-color: white;
-                        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
-                    }
-                    
-                    &::placeholder {
-                        color: $text-secondary;
+                        border-color: $border-active;
+                        background: rgba(255, 255, 255, 0.08);
+                        box-shadow: 0 0 20px rgba(56, 189, 248, 0.3),
+                                    0 0 40px rgba(37, 99, 235, 0.15);
+                        transform: scale(1.02);
                     }
                 }
                 
-                > div.errors {
-                    display: none;
+                textarea {
+                    resize: vertical;
+                    min-height: 120px;
+                }
+            }
+            
+            > div.errors {
+                display: none;
+                
+                &.err {
+                    display: block;
+                }
+                
+                > ul {
+                    list-style: none;
+                    margin-top: 0.5em;
                     
-                    &.err {
-                        display: block;
-                    }
-                    
-                    > ul {
-                        list-style: none;
-                        margin-top: 0.5em;
-                        
-                        > li {
-                            > span {
-                                color: #e74c3c;
-                                font-size: 0.85rem;
-                                display: block;
-                                margin: 0.3em 0;
-                            }
+                    > li {
+                        > span {
+                            color: #FF6B6B;
+                            font-size: 0.85rem;
+                            display: block;
+                            margin: 0.3em 0;
+                            animation: slideInFromLeft 0.3s ease;
                         }
                     }
                 }
             }
             
             > button {
-                background-color: $primary-color;
-                border: 2px solid $primary-color;
-                border-radius: 6px;
-                padding: 0.9em 2em;
+                background: linear-gradient(135deg, $primary-color, $accent-cyan);
+                border: none;
+                border-radius: 8px;
+                padding: 1.2em 2.5em;
                 color: white;
                 cursor: pointer;
-                font-weight: 600;
+                font-weight: 700;
                 font-size: 1rem;
-                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+                overflow: hidden;
                 margin-left: auto;
                 
-                &:hover {
-                    background-color: $primary-dark;
-                    border-color: $primary-dark;
-                    transform: translateY(-2px);
-                    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.2);
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.3);
+                    transform: translate(-50%, -50%);
+                    transition: width 0.6s, height 0.6s;
                 }
                 
-                &:active {
-                    transform: translateY(0);
+                &:active::before {
+                    width: 300px;
+                    height: 300px;
+                }
+                
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4),
+                                0 0 40px rgba(56, 189, 248, 0.3);
                 }
                 
                 @media (max-width: 565px) {
@@ -168,21 +246,19 @@ section#contact-section {
                     display: inline-block;
                     margin-right: 8px;
                     padding-right: 8px;
-                    border-right: 2px solid $primary-color;
+                    border-right: 2px solid $accent-cyan;
                     text-decoration: none;
-                    color: $primary-color;
-                    font-weight: 500;
-                    transition: color 0.3s ease;
+                    color: $accent-cyan;
+                    font-weight: 600;
+                    transition: all 0.3s ease;
                     
                     &:hover {
-                        color: $primary-dark;
+                        color: $text-primary;
+                        text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
                     }
                 }
                 
                 > a:nth-of-type(1) {
-                    @media (max-width:373px) {
-                        margin-left: 0;
-                    }
                     margin-left: 5px;
                 }
                 
