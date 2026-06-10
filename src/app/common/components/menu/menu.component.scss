@@ -1,37 +1,76 @@
+// Premium Navigation Menu
+$primary-color: #0066cc;
+$primary-light: #3d94ff;
+$text-primary: #1a1a1a;
+$text-secondary: #555555;
+$bg-hover: #f5f7fb;
+
 div.consult-menu-wrapper {
     margin: 10px 0;
     height: 100%;
+    
     > div.menu-seg {
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
+        
         &:last-child {
             margin-bottom: unset;
         }
+        
         > a.menu-heading {
             font-weight: 600;
-            margin-bottom: 0.5em;
-            font-size: 1.17em;
+            margin-bottom: 0.8em;
+            font-size: 1.1em;
             display: block;
             cursor: pointer;
             text-decoration: none;
+            color: $text-primary;
+            transition: all 0.3s ease;
+            padding: 0.5em 0;
+            border-left: 3px solid transparent;
+            padding-left: 0.5em;
+            
+            &:hover {
+                color: $primary-color;
+                border-left-color: $primary-color;
+            }
+            
+            &.active {
+                color: $primary-color;
+                border-left-color: $primary-color;
+            }
         }
+        
         > ul {
             list-style: none;
             max-height: 0;
-            transition: max-height 0.5s ease-in-out;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
+            
             &.show {
-                max-height: 250px;
+                max-height: 400px;
             }
+            
             > li {
                 cursor: pointer;
+                transition: all 0.3s ease;
+                
                 &:hover,
                 &.active {
-                    background-color: #e5e6ea;
+                    background-color: $bg-hover;
+                    border-left: 3px solid $primary-color;
                 }
+                
                 > a {
                     display: block;
-                    padding: 0.5em 2em;
+                    padding: 0.7em 1em 0.7em 1.5em;
                     text-decoration: none;
+                    color: $text-secondary;
+                    font-weight: 500;
+                    transition: color 0.3s ease;
+                    
+                    &:hover {
+                        color: $primary-color;
+                    }
                 }
             }
         }

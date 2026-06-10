@@ -1,69 +1,133 @@
+// Premium Footer Colors
+$bg-dark: #1a1a1a;
+$text-light: #e8e8e8;
+$text-secondary: #aaaaaa;
+$primary-color: #0066cc;
+$border-color: #333333;
+
 footer.wrapper {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    padding: 2.5em 1.5em;
-    background-color: #ffffff;
+    gap: 1.5em;
+    padding: 3.5em 2em;
+    background-color: $bg-dark;
+    color: $text-light;
+    
     > div.footer-top {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        padding-top: 2em;
+        border-top: 1px solid $border-color;
+        
         @media (max-width: 1341px) {
             flex-direction: column;
-            gap: 2em;
+            gap: 2.5em;
         }
+        
         > div.top-section {
+            flex: 0.25;
+            
             @media (max-width: 1341px) {
                 text-align: center;
                 width: 100%;
             }
+            
+            > strong {
+                font-size: 1.2rem;
+                color: white;
+                margin-bottom: 1em;
+                display: block;
+                font-weight: 700;
+            }
+            
+            > p {
+                color: $text-secondary;
+                line-height: 1.7;
+                font-size: 0.95rem;
+            }
         }
+        
         > div.top-bottom {
             display: flex;
             align-items: flex-start;
             justify-content: space-evenly;
-            flex: 0.9;
+            flex: 0.75;
+            gap: 2em;
+            
             @media (max-width: 1341px) {
                 width: 100%;
+                justify-content: space-around;
             }
             @media (max-width: 572px) {
                 flex-direction: column;
-                gap: 10px;
+                gap: 2em;
             }
+            
             > div.section {
                 > strong {
-                    margin-bottom: 12px;
+                    margin-bottom: 1.2em;
                     display: block;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 0.95rem;
                 }
+                
                 > ul {
                     list-style: none;
                     font-size: 0.9rem;
+                    
                     > li {
+                        margin-bottom: 0.8em;
+                        
                         > a {
                             text-decoration: none;
+                            color: $text-secondary;
+                            transition: color 0.3s ease;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.8em;
+                            
+                            &:hover {
+                                color: $primary-color;
+                            }
+                            
                             > img,
                             svg {
                                 display: block;
                                 height: 1.5em;
+                                width: 1.5em;
                                 object-fit: contain;
                             }
                         }
                     }
                 }
+                
                 &.links {
                     li {
-                        margin: 6px 0;
+                        margin-bottom: 0.8em;
                     }
                     a {
-                        text-decoration: underline !important;
+                        color: $primary-color;
+                        text-decoration: underline;
+                        
+                        &:hover {
+                            opacity: 0.8;
+                        }
                     }
                 }
             }
         }
     }
+    
     > div.footer-bottom {
+        padding-top: 1.5em;
+        border-top: 1px solid $border-color;
+        text-align: center;
+        
         > span {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            color: $text-secondary;
         }
     }
 }

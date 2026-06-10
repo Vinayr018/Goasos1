@@ -1,42 +1,84 @@
+// Premium Float Contact
+$primary-color: #0066cc;
+$primary-dark: #004499;
 $shadow-color: rgba(0, 0, 0, 0.1);
+$text-primary: #1a1a1a;
+$border-color: #e0e0e0;
 
 div.wrapper {
     background-color: white;
-    color: black;
-    box-shadow:
-        0 -2px 4px $shadow-color,
-        -2px 0px 4px $shadow-color,
-        2px 0px 4px $shadow-color;
+    color: $text-primary;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12),
+                0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15),
+                    0 12px 32px rgba(0, 0, 0, 0.12);
+    }
+    
     > ul {
         display: flex;
         align-items: center;
         list-style: none;
+        
         > li {
-            padding: 10px 15px;
-            border-right: 1px solid $shadow-color;
+            padding: 12px 16px;
+            border-right: 1px solid $border-color;
+            transition: all 0.3s ease;
+            
             &:last-of-type {
                 border-right: none;
             }
+            
+            &:hover {
+                background-color: rgba(0, 102, 204, 0.05);
+            }
+            
             > a {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 5px;
+                gap: 8px;
                 user-select: none;
                 cursor: pointer;
+                text-decoration: none;
+                font-weight: 500;
+                color: $primary-color;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    color: $primary-dark;
+                    transform: scale(1.1);
+                }
+                
                 > mat-icon {
-                    color: black;
+                    color: $primary-color;
+                    transition: color 0.3s ease;
                 }
+                
                 > span {
-                }
-                > svg {
-                    height: 1em;
-                    > path {
+                    font-size: 0.9rem;
+                    @media (max-width: 500px) {
+                        display: none;
                     }
                 }
+                
+                > svg {
+                    height: 1.2em;
+                    width: 1.2em;
+                    
+                    > path {
+                        fill: currentColor;
+                    }
+                }
+                
                 > img {
-                    height: 1em;
+                    height: 1.2em;
                     display: block;
+                    transition: transform 0.3s ease;
                 }
             }
         }
