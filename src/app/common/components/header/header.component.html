@@ -1,27 +1,41 @@
-<header>
-    <img src="/images/logo.jpg" alt="logo" loading="lazy">
-    <nav #nav>
+<header class="site-header">
+    <a routerLink="/" class="logo-link" aria-label="GOASOS Home">
+        <img src="/images/logo.jpg" alt="GOASOS" class="logo-img">
+    </a>
+
+    <nav #nav class="site-nav">
         <ul>
-            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
-            <li routerLinkActive="active"><a routerLink="/about-us">About Us</a></li>
-            <li>
-                <a [matMenuTriggerFor]="me" style="text-decoration: underline;cursor: pointer;">Products & Solutions</a>
-                <mat-menu #me>
-                    <ul class="drop-menu">
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/smart-home-automation-solutions">Home Automation Solutions</a></li>
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/smart-office-automation-solutions">Office Automation Solutions</a></li>
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/industrial-automation-solutions">Industrial Automation Solutions</a></li>
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/cctv-video-surveillance-security-cameras">Security Cameras & Centralized Surveillance</a></li>
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/space-saving-furniture-solutions">Space-Saving Multi-Functional Furniture</a></li>
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/solar-energy-solutions">Solar Energy Solutions</a></li>
-                    </ul>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a routerLink="/">Home</a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="/about-us">About</a>
+            </li>
+            <li class="has-dropdown">
+                <button type="button" [matMenuTriggerFor]="productsMenu" class="dropdown-trigger">
+                    Solutions
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <mat-menu #productsMenu="matMenu" class="products-menu">
+                    <a mat-menu-item routerLink="/smart-home-automation-solutions">Home Automation</a>
+                    <a mat-menu-item routerLink="/smart-office-automation-solutions">Office Automation</a>
+                    <a mat-menu-item routerLink="/industrial-automation-solutions">Industrial Automation</a>
+                    <a mat-menu-item routerLink="/cctv-video-surveillance-security-cameras">Security & CCTV</a>
+                    <a mat-menu-item routerLink="/space-saving-furniture-solutions">Space-Saving Furniture</a>
+                    <a mat-menu-item routerLink="/solar-energy-solutions">Solar Energy</a>
                 </mat-menu>
             </li>
-            <li routerLinkActive="active"><a routerLink="/software-consulting-services">Software Consulting</a></li>
-            <li routerLinkActive="active"><a routerLink="/contact-us">Contact Us</a></li>
+            <li routerLinkActive="active">
+                <a routerLink="/software-consulting-services">Consulting</a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="/contact-us">Contact</a>
+            </li>
         </ul>
+        <a routerLink="/contact-us" class="nav-cta">Get a Quote</a>
     </nav>
-    <button class="ham" (click)="ShowHeaderMenu()" aria-label="menu for main links">
+
+    <button class="ham" (click)="ShowHeaderMenu()" aria-label="Open menu" [attr.aria-expanded]="menuOpen">
         <span></span>
         <span></span>
         <span></span>

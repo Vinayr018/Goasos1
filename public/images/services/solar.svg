@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <circle cx="300" cy="120" r="50" fill="#f5a623" opacity="0.8"/>
+  <path d="M300 50 V30 M300 190 V210 M230 120 H210 M390 120 H410 M250 70 L235 55 M365 185 L380 200 M250 170 L235 185 M365 55 L380 70" stroke="#f5a623" stroke-width="4" stroke-linecap="round"/>
+  <rect x="120" y="200" width="360" height="120" rx="8" fill="rgba(0,167,248,0.25)" stroke="rgba(0,167,248,0.5)" stroke-width="2"/>
+  <path d="M140 220 H460 M140 260 H460 M140 300 H460" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <path d="M200 200 V320 M300 200 V320 M400 200 V320" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="300" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="rgba(255,255,255,0.7)">Solar Energy</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a2840"/>
+      <stop offset="1" stop-color="#0a1628"/>
+    </linearGradient>
+  </defs>
+</svg>

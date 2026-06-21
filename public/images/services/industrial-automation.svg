@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect x="100" y="200" width="80" height="120" fill="rgba(255,255,255,0.1)"/>
+  <rect x="220" y="160" width="80" height="160" fill="rgba(0,167,248,0.25)"/>
+  <rect x="340" y="180" width="80" height="140" fill="rgba(255,255,255,0.08)"/>
+  <rect x="460" y="140" width="60" height="180" fill="rgba(0,124,243,0.2)"/>
+  <path d="M140 200 V140 H200" stroke="#00a7f8" stroke-width="3" fill="none"/>
+  <circle cx="200" cy="140" r="6" fill="#00a7f8"/>
+  <path d="M260 160 V100 H320" stroke="#00a7f8" stroke-width="3" fill="none"/>
+  <circle cx="320" cy="100" r="6" fill="#00a7f8"/>
+  <text x="300" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="rgba(255,255,255,0.7)">Industrial</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a1628"/>
+      <stop offset="1" stop-color="#0d2847"/>
+    </linearGradient>
+  </defs>
+</svg>
