@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect x="150" y="100" width="300" height="200" rx="8" stroke="rgba(255,255,255,0.2)" stroke-width="2" fill="rgba(255,255,255,0.05)"/>
+  <rect x="170" y="120" width="120" height="80" rx="4" fill="rgba(0,167,248,0.3)"/>
+  <rect x="310" y="120" width="120" height="80" rx="4" fill="rgba(0,124,243,0.2)"/>
+  <path d="M170 220 H430" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <rect x="170" y="240" width="260" height="40" rx="4" fill="rgba(255,255,255,0.1)"/>
+  <path d="M300 100 V80 M280 90 L300 70 L320 90" stroke="#00a7f8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="300" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="rgba(255,255,255,0.7)">Space Saving</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#132238"/>
+      <stop offset="1" stop-color="#0a1628"/>
+    </linearGradient>
+  </defs>
+</svg>

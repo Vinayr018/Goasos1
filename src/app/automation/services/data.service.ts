@@ -16,13 +16,13 @@ export class AutomationDataService {
 
     public get Industry$(): Observable<Box[]> {
         return of([
-            { img: '/images/automation/industry/fms.png', alt: 'FMS', header: 'Fleet management system on cloud', body: 'Interface with ADAS processor for ADAS event recognition, Connects to cloud via GPRS through a cellular modem, Integrated GNSS for Navigation', id: 'one' },
-            { img: '/images/automation/industry/machine.png', alt: 'machine', header: 'Machine Automation', body: 'Automate and monitor Air Compressors, Chillers, Generators, smart meters, Circuit breakers', id: 'two' },
-            { img: '/images/automation/industry/coldstorage.png', alt: 'cold storage', header: 'Cold storage monitoring', body: 'BLE nodes to measure temperature and humidity, GPS sensor in ioT device will continuously keep track of location', id: 'three' },
-            { img: '/images/automation/industry/tracking.png', alt: 'tracking', header: 'Asset tag and trace & Geo fencing', body: 'Bluetooth (BLE) Beacons/tags, Readers Gateways to read beacon signals and to communicate to cloud, Triangulation for indoor positioning. Geo fencing as per warehouse perimeter', id: 'four' },
-            { img: '/images/automation/industry/sos.png', alt: 'SOS', header: 'Panic button/SoS/Emergency button', body: 'GPS & GPRS based device for raising panic alerts, alarms, triggering SoS and emergency requests configurable via mobile app. Location, vehicle & driver details sent regularly to cloud', id: 'five' },
-            { img: '/images/automation/industry/substation.png', alt: 'substation', header: 'Power Substation Monitoring & Control', body: 'GPRS based IoT device, MODBUS RTU communication to fetch electrical parameters to monitor power quality from the control panel. Track changes in all electrical parameters, circuit breakers, Isolators & Relay status to identify the faults and suggest recovery tips to maintain the power quality', id: 'six' },
-            { img: '/images/automation/industry/solar.png', alt: 'solar', header: 'Remote monitoring of Solar farm', body: 'GPRS based, condition monitoring of solar panel, MPPT charger & Battery, Retrofitting of custom sensors to measure power, Condition monitoring, Predictive maintenance of Solar plant equipment', id: 'seven' }
+            { img: '/images/automation/industry/fleet-management-systems.png', alt: 'FMS', header: 'Fleet management system on cloud', body: 'Interface with ADAS processor for ADAS event recognition, Connects to cloud via GPRS through a cellular modem, Integrated GNSS for Navigation', id: 'one' },
+            { img: '/images/automation/industry/machine-automation.png', alt: 'machine', header: 'Machine Automation', body: 'Automate and monitor Air Compressors, Chillers, Generators, smart meters, Circuit breakers', id: 'two' },
+            { img: '/images/automation/industry/cold-storage-monitoring.png', alt: 'cold storage', header: 'Cold storage monitoring', body: 'BLE nodes to measure temperature and humidity, GPS sensor in ioT device will continuously keep track of location', id: 'three' },
+            { img: '/images/automation/industry/asset-tracking-&-geo-fencing.png', alt: 'tracking', header: 'Asset tag and trace & Geo fencing', body: 'Bluetooth (BLE) Beacons/tags, Readers Gateways to read beacon signals and to communicate to cloud, Triangulation for indoor positioning. Geo fencing as per warehouse perimeter', id: 'four' },
+            { img: '/images/automation/industry/panic-buttonsosemergency-response-systems.png', alt: 'SOS', header: 'Panic button/SoS/Emergency button', body: 'GPS & GPRS based device for raising panic alerts, alarms, triggering SoS and emergency requests configurable via mobile app. Location, vehicle & driver details sent regularly to cloud', id: 'five' },
+            { img: '/images/automation/industry/power-substation-monitoring-&-control.png', alt: 'substation', header: 'Power Substation Monitoring & Control', body: 'GPRS based IoT device, MODBUS RTU communication to fetch electrical parameters to monitor power quality from the control panel. Track changes in all electrical parameters, circuit breakers, Isolators & Relay status to identify the faults and suggest recovery tips to maintain the power quality', id: 'six' },
+            { img: '/images/automation/industry/solar-farm-remote-monitoring.png', alt: 'solar', header: 'Remote monitoring of Solar farm', body: 'GPRS based, condition monitoring of solar panel, MPPT charger & Battery, Retrofitting of custom sensors to measure power, Condition monitoring, Predictive maintenance of Solar plant equipment', id: 'seven' }
         ]);
     }
 
@@ -39,10 +39,10 @@ export class AutomationDataService {
             {
                 header: 'Timesheet Automation', body: 'Automate office Timesheet with Access cards, finger print & facial recognition.',
                 imgs: [
-                    { src: '/images/automation/office/new/probio.png', alt: 'ProBio Plus Series' },
-                    { src: '/images/automation/office/new/D32.png', alt: 'D3' },
-                    { src: '/images/automation/office/new/LX50.jpg', alt: 'LX50' },
-                    { src: '/images/automation/office/new/WL10.png', alt: 'WL10' }]
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20240627/TS2000%20Plus_500x500.png', alt: 'ProBio Plus Series' },
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20240627/TS1000%20plus%20series_500x500.png', alt: 'D3' },
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20240612/SBTL700_01.png', alt: 'LX50' },
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20240223/ZKX4233A_03.png', alt: 'WL10' }]
             },
             {
                 header: 'Access Control', body: 'Restrict the access of your office premise of Unauthorised access, we provide card based access control along with biometrics like facial recognistion and finger print.',
@@ -73,17 +73,17 @@ export class AutomationDataService {
 
     public get Security(): Box[] {
         return [
-            { img: '/images/automation/security/cctv.jpeg', alt: 'cctv', header: 'CCTV installation', body: 'CCTV installation powered by Solar panel', id: 'one' },
-            { img: '/images/automation/security/cctvdevice.jpg', alt: 'cctv devices', header: 'CCTV installation with centeralised control', body: 'CCTV installation with centeralised control via mobile app', id: 'two' },
-            { img: '/images/automation/security/cctvnotification.jpg', alt: 'cctv notification', header: 'CCTV activity notification', body: 'get notified on mobile App whenever there is any movment detected', id: 'three' },
+            { img: '/images/automation/security/solar-powered-cctv-cameras.png', alt: 'cctv', header: 'CCTV installation', body: 'CCTV installation powered by Solar panel', id: 'one' },
+            { img: '/images/automation/security/centralized-video-management.png', alt: 'cctv devices', header: 'CCTV installation with centeralised control', body: 'CCTV installation with centeralised control via mobile app', id: 'two' },
+            { img: '/images/automation/security/app-controlled-surveillance.png', alt: 'cctv notification', header: 'CCTV activity notification', body: 'get notified on mobile App whenever there is any movment detected', id: 'three' },
         ];
     }
 
     public get Space$(): Observable<VideoBox[]> {
         return of([
-            { poster: '/images/automation/space/beddesk.png', src: 'images/automation/space/bed-with-desk.mp4', header: 'Bed with storage and iDesk', body: 'Bed with storage and iDesk and comes in all sizes (Single bed, King size, queen size)', id: 'one' },
-            { poster: '/images/automation/space/bedstorage.png', src: 'images/automation/space/bed-with-storage.mp4', header: 'Bed with storage', body: 'Bed with storage and comes in all sizes (Single bed, King size, queen size)', id: 'two' },
-            { poster: '/images/automation/space/bedsofa.png', src: 'images/automation/space/desk-control.mp4', header: 'Bed with storage and Sofa', body: 'Bed with storage and Sofa and comes in all sizes (Single bed, King size, queen size)', id: 'three' },
+            { poster: '/images/space-saving-automation-video-thumbnail.jpg', src: 'images/automation/space/bed-with-desk.mp4', header: 'Bed with storage and iDesk', body: 'Bed with storage and iDesk and comes in all sizes (Single bed, King size, queen size)', id: 'one' },
+            { poster: '/images/space-saving-automation-video-thumbnail.jpg', src: 'images/automation/space/bed-with-storage.mp4', header: 'Bed with storage', body: 'Bed with storage and comes in all sizes (Single bed, King size, queen size)', id: 'two' },
+            { poster: '/images/space-saving-automation-video-thumbnail.jpg', src: 'images/automation/space/desk-control.mp4', header: 'Bed with storage and Sofa', body: 'Bed with storage and Sofa and comes in all sizes (Single bed, King size, queen size)', id: 'three' },
         ]);
     }
 }

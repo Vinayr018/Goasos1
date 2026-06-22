@@ -1,194 +1,305 @@
 <div class="main-home-wrapper">
-    <app-hero h1="Automation Solutions for Homes, Offices and Industries | Bangalore, Bhubaneswar & Cuttack"
-        p="Empowering businesses with smart home, office, industrial and energy automation along with expert software consulting in Banking, Capital Markets, and Data & AI - serving Bangalore, Bhubaneswar, and Cuttack."
+    <!-- Hero Section -->
+    <app-hero
+        [premium]="true"
+        h1="Powering Industries with Reliable Engineering Solutions"
+        p="Empowering businesses with smart home, office, industrial and energy automation along with expert software consulting in Banking, Capital Markets, and Data & AI — serving Bangalore, Bhubaneswar, and Cuttack."
         [showCLient]="true">
         <div class="actions" actions>
             <a [href]="cont.PopulateContactLocation()" (click)="analytics.HomeCtaEvent('home_request_demo')"
-                class="pri">Request a Demo</a>
+                class="pri">Get a Quote</a>
             <a [href]="cont.PopulateContactLocation()" (click)="analytics.HomeCtaEvent('home_hero_contact')"
-                class="sec">Contact
-                Us&nbsp;&nbsp;&rarr;</a>
+                class="sec">Contact Us&nbsp;&nbsp;&rarr;</a>
+            <a class="ter" (click)="scrollToServices(); $event.preventDefault()" href="#services-section">Explore Services</a>
         </div>
     </app-hero>
-    <section class="about block">
-        <h2>About Us</h2>
-        <section class="grid">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>who we are:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>At GOAS, we combine smart automation products with consulting expertise to help businesses and
-                        homeowners embrace the digital future. Our mission is to empower organizations across industries
-                        by
-                        delivering comprehensive, tailored solutions that drive operational efficiency, reduce costs and
-                        foster
-                        innovation.</p>
-                </mat-card-content>
-            </mat-card>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>our key strengths:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <ul class="card-lst">
-                        <li><strong>Comprehensive Offerings:</strong>Home, Office, Industrial & Energy Automation
-                            Solutions.
-                        </li>
-                        <li><strong>Expert Consulting:</strong>Software consulting in Banking & Financial Services,
-                            Capital
-                            Markets, and Data & AI.</li>
-                        <li>Local expertise in Bangalore, Bhubaneswar, and Cuttack.</li>
-                    </ul>
-                </mat-card-content>
-            </mat-card>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>The Automation Advantage:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <ul class="card-lst">
-                        <li>Increased Operational Efficiency</li>
-                        <li>Significant Cost Reduction</li>
-                        <li>Enhanced Security</li>
-                    </ul>
-                </mat-card-content>
-            </mat-card>
-        </section>
-        <a routerLink="about-us" (click)="analytics.HomeCtaEvent('home_about')">Learn More About
-            Us&nbsp;&nbsp;&rarr;</a>
-    </section>
-    <section class="block home-automation">
-        <h2>Our Automation Solutions</h2>
-        <div class="auto-sol">
-            <mat-card class="space-it">
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>Home Automation Solutions:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>Transform your living space with intelligent systems that enhance comfort, security, and energy
-                        efficiency.</p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <a routerLink="smart-home-automation-solutions" class="card-cta"
-                        (click)="analytics.HomeCtaEvent('home_smart_home')">Make your Home
-                        Smarter&nbsp;&nbsp;&rarr;</a>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card class="space-it">
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>Office Automation Solutions:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>Streamline workplace operations with smart systems that boost productivity and strengthen
-                        security.</p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <a routerLink="smart-office-automation-solutions" class="card-cta"
-                        (click)="analytics.HomeCtaEvent('home_automation_office')">Optimize Your
-                        Office&nbsp;&nbsp;&rarr;</a>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card class="space-it">
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>Industrial Automation Systems:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>Optimize your industrial operations with robust, cloud-based solutions.</p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <a routerLink="industrial-automation-solutions" class="card-cta"
-                        (click)="analytics.HomeCtaEvent('home_automation_industry')">Boost
-                        Production&nbsp;&nbsp;&rarr;</a>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card class="space-it">
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>Security Cameras & Centralized Surveillance:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>Protect your assets and ensure security with advanced video surveillance systems designed for
-                        residential, commercial and industrial environments.</p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <a routerLink="cctv-video-surveillance-security-cameras" class="card-cta"
-                        (click)="analytics.HomeCtaEvent('home_automation_security')">Upgrade Your
-                        Security&nbsp;&nbsp;&rarr;</a>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card class="space-it">
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>Space-Saving Multi-Functional Furniture:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>Maximize functionality in limited spaces with our innovative space-saving furniture and smart
-                        storage solutions for homes and offices.</p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <a routerLink="space-saving-furniture-solutions" class="card-cta"
-                        (click)="analytics.HomeCtaEvent('home_automation_space')">Optimize Your Space
-                        Today&nbsp;&nbsp;&rarr;</a>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card class="space-it">
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>Solar Energy Solutions:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>Optimize energy consumption with renewable solutions for homes and businesses.</p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <a routerLink="solar-energy-solutions" class="card-cta"
-                        (click)="analytics.HomeCtaEvent('home_go_green')">Go Green&nbsp;&nbsp;&rarr;</a>
-                </mat-card-actions>
-            </mat-card>
+
+    <!-- About Section -->
+    <section class="home-section about-section reveal-on-scroll" id="about-section">
+        <div class="about-bg-accent" aria-hidden="true"></div>
+        <div class="section-container">
+            <div class="about-shell">
+                <div class="about-visual-block">
+                    <div class="about-frame">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=900&h=700&q=80"
+                            alt="Engineering professionals working on automation systems" loading="lazy">
+                    </div>
+                    <div class="about-floating-stats">
+                        <div class="about-stat-pill">
+                            <strong>500+</strong>
+                            <span>Projects Delivered</span>
+                        </div>
+                        <div class="about-stat-pill">
+                            <strong>15+</strong>
+                            <span>Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text-block">
+                    <div class="section-eyebrow">
+                        <span class="eyebrow-line"></span>
+                        <span class="section-tag">About GOASOS</span>
+                    </div>
+                    <h2>Engineering Tomorrow's Automation Today</h2>
+                    <p class="section-lead">At GOAS, we combine smart automation products with consulting expertise to help businesses and homeowners embrace the digital future.</p>
+                    <div class="about-features">
+                        <article class="about-feature">
+                            <span class="feature-num">01</span>
+                            <div>
+                                <h3>Who We Are</h3>
+                                <p>Empowering organizations with tailored automation and consulting that drives efficiency and innovation.</p>
+                            </div>
+                        </article>
+                        <article class="about-feature">
+                            <span class="feature-num">02</span>
+                            <div>
+                                <h3>Our Strengths</h3>
+                                <p>Home, office, industrial & energy automation plus Banking, Capital Markets and Data & AI consulting.</p>
+                            </div>
+                        </article>
+                        <article class="about-feature">
+                            <span class="feature-num">03</span>
+                            <div>
+                                <h3>Local Expertise</h3>
+                                <p>Trusted teams serving Bangalore, Bhubaneswar, and Cuttack with end-to-end support.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <a routerLink="about-us" class="btn-primary btn-arrow" (click)="analytics.HomeCtaEvent('home_about')">
+                        Learn More About Us&nbsp;&nbsp;&rarr;
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="block consulting">
-        <h2>Our Expert Consulting Services</h2>
-        <section class="consult-grid">
-            <section class="consul-type">
-                <h3>Banking & Financial Services:</h3>
-                <p>We help financial institutions leverage automation to streamline operations, enhance security and
-                    improve
-                    customer experiences.</p>
-            </section>
-            <section class="consul-type">
-                <h3>Capital Markets Solutions:</h3>
-                <p>Leverage our expertise in trade automation, risk management and data analytics to optimize operations
-                    in
-                    capital markets.</p>
-            </section>
-            <section class="consul-type">
-                <h3>Data & AI Services:</h3>
-                <p>Transform raw data into actionable insights. Our consulting services include data strategy
-                    development,
-                    machine learning, predictive analytics and business intelligence solutions.</p>
-            </section>
-        </section>
-        <a routerLink="software-consulting-services" (click)="analytics.HomeCtaEvent('home_consulting')">Learn More
-            About Our
-            Consulting
-            Services&nbsp;&nbsp;&rarr;</a>
+
+    <!-- Services Section -->
+    <section class="home-section services-section reveal-on-scroll" id="services-section">
+        <div class="services-bg-pattern" aria-hidden="true"></div>
+        <div class="section-container">
+            <div class="section-header centered">
+                <div class="section-eyebrow center">
+                    <span class="eyebrow-line"></span>
+                    <span class="section-tag">Our Solutions</span>
+                    <span class="eyebrow-line"></span>
+                </div>
+                <h2>Comprehensive Automation & Power Solutions</h2>
+                <p class="section-lead">End-to-end engineering services designed to optimize performance, enhance security, and drive sustainable growth.</p>
+            </div>
+            <div class="solutions-showcase">
+                <article class="solution-tile" *ngFor="let service of services; let i = index">
+                    <a [routerLink]="service.route" class="solution-tile-link"
+                        (click)="analytics.HomeCtaEvent(service.analyticsKey)">
+                        <div class="solution-photo">
+                            <img [src]="service.image" [alt]="service.title" loading="lazy">
+                            <span class="solution-num">{{ (i + 1) | number:'2.0-0' }}</span>
+                        </div>
+                        <div class="solution-info">
+                            <h3>{{service.title}}</h3>
+                            <p>{{service.description}}</p>
+                            <span class="solution-cta">{{service.cta}}&nbsp;&nbsp;&rarr;</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
     </section>
-    <app-main-contact-branch />
-    <app-contact h2="Your Trusted Partner for Automation Solutions" h3="Ready to Automate?" />
+
+    <!-- Why Choose Us -->
+    <section class="home-section why-section reveal-on-scroll">
+        <div class="section-container">
+            <div class="section-header centered">
+                <span class="section-tag">Why Choose Us</span>
+                <h2>Built on Trust, Driven by Excellence</h2>
+                <p class="section-lead">We deliver world-class engineering solutions backed by certified expertise and unwavering commitment to quality.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card" *ngFor="let item of whyChooseUs">
+                    <div class="why-icon" [attr.data-icon]="item.icon">
+                        <svg *ngIf="item.icon === 'support'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                        <svg *ngIf="item.icon === 'certified'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15l-2 5 2-1 2 1-2-5z"/><circle cx="12" cy="8" r="6"/></svg>
+                        <svg *ngIf="item.icon === 'response'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <svg *ngIf="item.icon === 'reliable'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                        <svg *ngIf="item.icon === 'quality'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.description}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consulting Section -->
+    <section class="home-section consulting-section reveal-on-scroll" id="consulting-section">
+        <div class="consulting-bg" aria-hidden="true"></div>
+        <div class="section-container">
+            <div class="section-header centered">
+                <div class="section-eyebrow center">
+                    <span class="eyebrow-line"></span>
+                    <span class="section-tag">Expert Consulting</span>
+                    <span class="eyebrow-line"></span>
+                </div>
+                <h2>Software Consulting Services</h2>
+                <p class="section-lead">Leverage our deep industry expertise to transform your business with cutting-edge technology solutions.</p>
+            </div>
+            <div class="consulting-track">
+                <article class="consulting-panel" *ngFor="let c of consultingServices">
+                    <div class="consulting-panel-media">
+                        <img [src]="c.image" [alt]="c.title" loading="lazy">
+                        <span class="consulting-step">{{c.number}}</span>
+                    </div>
+                    <div class="consulting-panel-body">
+                        <h3>{{c.title}}</h3>
+                        <p>{{c.description}}</p>
+                    </div>
+                </article>
+            </div>
+            <div class="consulting-action">
+                <a routerLink="software-consulting-services" class="btn-primary btn-arrow"
+                    (click)="analytics.HomeCtaEvent('home_consulting')">
+                    Explore Consulting Services&nbsp;&nbsp;&rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="home-section projects-section reveal-on-scroll">
+        <div class="section-container">
+            <div class="section-header centered">
+                <span class="section-tag">Featured Projects</span>
+                <h2>Delivering Excellence Across Industries</h2>
+                <p class="section-lead">Explore our portfolio of successful automation and engineering projects across India.</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card" *ngFor="let project of projects">
+                    <div class="project-image">
+                        <img [src]="project.image" [alt]="project.title" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">{{project.category}}</span>
+                        <h3>{{project.title}}</h3>
+                        <span class="project-location">{{project.location}}</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="home-section testimonials-section reveal-on-scroll">
+        <div class="section-container">
+            <div class="section-header centered">
+                <span class="section-tag">Testimonials</span>
+                <h2>What Our Clients Say</h2>
+            </div>
+            <div class="testimonial-carousel">
+                <div class="testimonial-track">
+                    <div class="testimonial-slide" *ngFor="let t of testimonials; let i = index"
+                        [class.active]="i === activeTestimonial">
+                        <div class="testimonial-card glass-card">
+                            <div class="testimonial-stars">
+                                <span *ngFor="let s of [1,2,3,4,5]" [class.filled]="s <= t.rating">&#9733;</span>
+                            </div>
+                            <blockquote>"{{t.text}}"</blockquote>
+                            <div class="testimonial-author">
+                                <img [src]="t.avatar" [alt]="t.name" loading="lazy">
+                                <div>
+                                    <strong>{{t.name}}</strong>
+                                    <span>{{t.role}}, {{t.company}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-dots">
+                    <button *ngFor="let t of testimonials; let i = index"
+                        [class.active]="i === activeTestimonial"
+                        (click)="setTestimonial(i)"
+                        [attr.aria-label]="'View testimonial ' + (i + 1)">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="home-section stats-section reveal-on-scroll">
+        <div class="stats-bg" aria-hidden="true"></div>
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-item" *ngFor="let stat of stats">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                    </div>
+                    <span class="stat-value">{{stat.current}}{{stat.suffix}}</span>
+                    <span class="stat-label">{{stat.label}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="home-section cta-section reveal-on-scroll">
+        <div class="section-container">
+            <div class="cta-banner">
+                <div class="cta-glow" aria-hidden="true"></div>
+                <h2>Need Reliable Power Solutions?</h2>
+                <p>Get expert engineering consultation and a customized quote for your automation and power system needs.</p>
+                <div class="cta-actions">
+                    <a [href]="cont.PopulateContactLocation()" class="btn-primary"
+                        (click)="analytics.HomeCtaEvent('home_request_demo')">Request a Quote</a>
+                    <a [href]="cont.PopulateContactLocation()" class="btn-outline-light"
+                        (click)="analytics.HomeCtaEvent('home_hero_contact')">Contact Us&nbsp;&nbsp;&rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <div class="home-locations reveal-on-scroll">
+        <app-main-contact-branch />
+    </div>
+
+    <!-- Contact Section -->
+    <section class="home-section home-contact reveal-on-scroll" id="contact-section">
+        <div class="section-container">
+            <div class="contact-shell">
+                <aside class="contact-brand-panel">
+                    <div class="section-eyebrow">
+                        <span class="eyebrow-line light"></span>
+                        <span class="section-tag light">Get In Touch</span>
+                    </div>
+                    <h2>Ready to Automate Your Business?</h2>
+                    <p class="section-lead">Speak with our experts for a free consultation. We respond within 24 hours across all service locations.</p>
+                    <div class="contact-quick-actions">
+                        <a href="tel:+919845812673" class="contact-chip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            <span>+91-98458 12673</span>
+                        </a>
+                        <a href="mailto:hemanta.bal@goasos.com" class="contact-chip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                            <span>hemanta.bal&#64;goasos.com</span>
+                        </a>
+                        <div class="contact-chip static">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Bengaluru &bull; Bhubaneswar &bull; Cuttack</span>
+                        </div>
+                    </div>
+                    <div class="contact-trust-badges">
+                        <span>Free Consultation</span>
+                        <span>24hr Response</span>
+                        <span>3 Locations</span>
+                    </div>
+                </aside>
+                <div class="contact-form-panel">
+                    <div class="form-panel-header">
+                        <h3>Request Your Consultation</h3>
+                        <p>Fill in your details and our team will reach out shortly.</p>
+                    </div>
+                    <app-contact h2="" h3="" />
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

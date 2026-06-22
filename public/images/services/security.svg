@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <circle cx="300" cy="200" r="100" stroke="rgba(0,167,248,0.4)" stroke-width="2" fill="none"/>
+  <circle cx="300" cy="200" r="70" stroke="rgba(0,167,248,0.3)" stroke-width="2" fill="none"/>
+  <path d="M300 130 L360 160 V220 C360 260 300 290 300 290 C300 290 240 260 240 220 V160 L300 130Z" fill="rgba(0,167,248,0.35)" stroke="#00a7f8" stroke-width="2"/>
+  <circle cx="300" cy="200" r="20" fill="#00a7f8"/>
+  <rect x="280" y="120" width="40" height="30" rx="20" fill="rgba(255,255,255,0.15)"/>
+  <text x="300" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="rgba(255,255,255,0.7)">Security & CCTV</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a1628"/>
+      <stop offset="1" stop-color="#1a2540"/>
+    </linearGradient>
+  </defs>
+</svg>

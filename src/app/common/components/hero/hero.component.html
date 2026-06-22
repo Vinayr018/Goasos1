@@ -1,16 +1,35 @@
-<section class="block hero">
-    <h1>{{h1}}</h1>
-    <p>{{p}}</p>
-    <ng-content select="[actions]"></ng-content>
-    <div class="trust" *ngIf="showCLient">
-        <p>Trusted by leading organizations across industries</p>
-        <div class="client-logos">
-            <img src="https://kpmg.com/content/experience-fragments/kpmgpublic/in/en/site/header/master/_jcr_content/root/header/logo.coreimg.svg/1732260814565/logo.svg"
-                alt="KPMG">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Siemens_AG_logo.svg/1200px-Siemens_AG_logo.svg.png"
-                alt="Siemens">
-            <img src="https://www.capgemini.com/wp-content/themes/capgemini2020/assets/images/logo.svg" alt="Capgemini">
-            <img src="https://www.milkbasket.com/assets/img/logo/mb-logo-horizontal.png" alt="Capgemini">
+<section class="block hero" [class.hero-premium]="premium">
+    <div class="hero-bg" *ngIf="premium">
+        <img [src]="backgroundImage" alt="Industrial engineering and power systems" class="hero-bg-image" loading="eager" fetchpriority="high">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" aria-hidden="true">
+            <span *ngFor="let p of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]" class="particle"></span>
         </div>
+        <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+        <div class="hero-grid-lines" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero-content">
+        <div class="hero-badge" *ngIf="premium">
+            <span class="badge-dot"></span>
+            Engineering Excellence Since 2010
+        </div>
+        <h1>{{h1}}</h1>
+        <p>{{p}}</p>
+        <ng-content select="[actions]"></ng-content>
+        <div class="trust" *ngIf="showCLient">
+            <p>Trusted by leading organizations across industries</p>
+            <div class="client-logos">
+                <span class="client-badge">KPMG</span>
+                <span class="client-badge">Siemens</span>
+                <span class="client-badge">Capgemini</span>
+                <span class="client-badge">Milkbasket</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-scroll-indicator" *ngIf="premium" aria-hidden="true">
+        <span></span>
     </div>
 </section>

@@ -9,7 +9,10 @@ export class HeaderComponent {
 
   @ViewChild('nav') private nav!: ElementRef<HTMLElement>;
 
+  public menuOpen = false;
+
   public ShowHeaderMenu(): void {
+    this.menuOpen = true;
     this.nav.nativeElement.classList.add('show');
   }
 
@@ -19,6 +22,7 @@ export class HeaderComponent {
     const hamButton = this.closestParent(clickedElement, 'button.ham');
 
     if (!hamButton && this.nav) {
+      this.menuOpen = false;
       this.nav.nativeElement.classList.remove('show');
     }
   }

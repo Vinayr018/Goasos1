@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <circle cx="480" cy="80" r="120" fill="#00a7f8" opacity="0.15"/>
+  <circle cx="100" cy="320" r="80" fill="#e63946" opacity="0.1"/>
+  <path d="M300 120 L420 200 V320 H180 V200 L300 120Z" stroke="white" stroke-width="4" fill="rgba(255,255,255,0.08)"/>
+  <rect x="260" y="240" width="80" height="80" rx="4" fill="rgba(0,167,248,0.4)"/>
+  <circle cx="300" cy="200" r="12" fill="#00a7f8"/>
+  <path d="M200 160 h40 M360 160 h40 M200 220 h30 M370 220 h30" stroke="rgba(255,255,255,0.5)" stroke-width="3" stroke-linecap="round"/>
+  <text x="300" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="600" fill="rgba(255,255,255,0.7)">Smart Home</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a1628"/>
+      <stop offset="1" stop-color="#132238"/>
+    </linearGradient>
+  </defs>
+</svg>
