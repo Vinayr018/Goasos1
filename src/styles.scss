@@ -210,18 +210,56 @@ $secondary-color: #00b8ff;
 
 .heading-section {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
+  }
 }
 
 .subheading {
   font-family: 'Inter', sans-serif;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   font-weight: 500;
   color: var(--color-text-secondary);
   line-height: 1.6;
+  
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
+}
+
+// Accessibility & Performance
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// Dark mode support (optional)
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-light-bg: #1e293b;
+    --color-text-primary: #f1f5f9;
+    --color-text-secondary: #cbd5e1;
+  }
 }
 @mixin list-spacing {
   margin: 0.3em 0;
@@ -441,10 +479,10 @@ button.product-video-control {
   > span {
   }
   &.active {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: #00a7f8;
+    background-color: rgba(37, 99, 235, 0.08);
+    color: #2563eb;
     > .ico {
-      fill: #00a7f8;
+      fill: #2563eb;
     }
   }
 }
@@ -618,7 +656,7 @@ ul.drop-menu {
     padding: 10px 15px;
     &:hover,
     &.active {
-      color: #00a7f8;
+      color: #2563eb;
     }
   }
 }
