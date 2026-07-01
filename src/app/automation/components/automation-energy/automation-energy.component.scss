@@ -177,3 +177,82 @@ section {
         }
     }
 }
+
+// GLOBAL STYLES
+.section-with-tag {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $primary-color;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 0.5rem 1rem;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.section-with-tag h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: $text-dark;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.benefit-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+        color: $text-muted;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+        padding-left: 1.75rem;
+        position: relative;
+        
+        &::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: $accent-green;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.95rem 2.25rem;
+    background: linear-gradient(135deg, $primary-color 0%, #1e40af 100%);
+    color: $white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.35s ease;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    cursor: pointer;
+    border: none;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.5);
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
